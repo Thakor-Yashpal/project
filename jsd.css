@@ -1,0 +1,1000 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
+// Additional utility classes
+.tut {
+    background: #00ffc2;
+    padding: 3px 10px;
+    position: relative;
+    top: -7px;
+    color: #061b20;
+    right: 4px;
+    cursor: pointer;
+    transition: all 300ms;
+    &:hover {
+        background: white;
+    }
+}
+
+.tutorial {
+    z-index: 10000000;
+    background: #031216ed;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 300ms;
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+        transition: all 300ms 1000ms;
+    }
+    &_screen {
+        height: 300px;
+        width: 700px;
+        pointer-events: none;
+        &.active {
+            pointer-events: all;
+            .gif {
+                transform: scale(1) translateY(-119px) translateX(-153px);
+                opacity: 1;
+                transition: all 250ms 250ms;
+            }
+            .content {
+                opacity: 1;
+                transform: scale(1);
+                transition: all 250ms 300ms;
+            }
+        }
+        .gif {
+            width: 400px;
+            opacity: 0;
+            box-shadow: 0 0 0 4px white;
+            height: 400px;
+            position: absolute;
+            transition: all 250ms 50ms;
+            z-index: 1;
+            transform: scale(0) translateY(-119px) translateX(-153px);
+        }
+        .content {
+            clip-path: polygon(0 0, 100% 0, 100% 84%, 92% 100%, 0 100%);
+            opacity: 0;
+            background: #072931;
+            padding: 60px 60px 60px 280px;
+            transition: all 250ms 0ms;
+            transform: scale(0);
+            color: white;
+            h2 {
+                font-size: 28px;
+                margin-bottom: 8px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 18px !important;
+            }
+        }
+    }
+}
+
+.diffSelector {
+    padding-bottom: 20px;
+    width: 327px;
+    border-bottom: 2px solid #0e2328;
+}
+
+.difficulty {
+    background: #041316;
+    font-size: 16px;
+    padding: 6px 10px;
+    width: 33.33%;
+    opacity: 0.5;
+    transition: all 200ms;
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+    }
+    &.active {
+        background: #00ffc2;
+        color: #061b20;
+        opacity: 1;
+    }
+}
+
+.bought {
+    background: #051418d9;
+    padding: 10px;
+    color: #ffffff;
+    width: 90%;
+    left: 7px;
+    font-weight: bold;
+    padding: 89px 10px;
+    border-radius: 10px;
+    top: 50%;
+    font-size: 18px;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.text-blue {
+    color: #061B20;
+}
+
+.text-pink {
+    color: #E82755;
+}
+
+.text-brightblue {
+    color: #00D1FF;
+}
+
+.text-green {
+    color: #00FFC2;
+}
+
+.bg-grey {
+    background: #102B32;
+}
+
+.bg-green {
+    background: #00FFC2;
+}
+
+.text-description {
+    color: #91C2CE;
+    font-size: 13px;
+    line-height: 16px !important;
+}
+
+.bg-blue {
+    background: #061B20;
+}
+
+.text-lightblue {
+    color: #092830;
+}
+
+.text-lightgrey {
+    color: #35464A;
+}
+
+.text-lime {
+    color: #E5FF44;
+}
+
+.line-height-small {
+    line-height: 16px;
+}
+
+.card {
+    &--hacker {
+        background-image: url('https://assets.codepen.io/217233/hack--hackercardback.png');
+        pointer-events: none;
+    }
+    &--firewall {
+        background-image: url('https://assets.codepen.io/217233/hack--cardbackempty.png');
+        &--active {
+            background-image: url('https://assets.codepen.io/217233/hack--firewallcardback_1.png');
+            animation: pump 200ms forwards;
+        }
+    }
+    &--defensive {
+        background-image: url('https://assets.codepen.io/217233/hack--firewallcardback_1.png');
+    }
+    &--enemy {
+        background-image: url('https://assets.codepen.io/217233/hack--enemycardback.png');
+    }
+    &--format {
+        background-image: url('https://assets.codepen.io/217233/hack--formatcardback.png');
+    }
+    &--node {
+        background-image: url('https://assets.codepen.io/217233/hack--datacardback.png');
+    }
+    &--mine,
+    &--healing,
+    &--undefined {
+        background-image: url('https://assets.codepen.io/217233/hack--genericcardback.png');
+    }
+    &--offensive {
+        background-image: url('https://assets.codepen.io/217233/hack--offensivecardback.png');
+    }
+    &--relic {
+        background-image: url('https://assets.codepen.io/217233/hack--upgradecardback.png');
+    }
+}
+
+.animationWrap {
+    &.damaged {
+        animation: shake 200ms forwards;
+    }
+}
+
+.shake {
+    animation: shake 200ms forwards;
+}
+
+.trimWrap {
+    left: -67px;
+    top: -44px;
+}
+
+@keyframes pump {
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(0.95)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0)
+    }
+    20% {
+        transform: translateX(-10px)
+    }
+    40% {
+        transform: translateX(10px)
+    }
+    60% {
+        transform: translateX(-5px)
+    }
+    80% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+.eject {
+    transition: all 200ms;
+    &:hover {
+        bottom: 8px;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0) translateY(0)
+    }
+    50% {
+        transform: translateX(100px) translateY(100px)
+    }
+    100% {
+        transform: translateX(0) translateY(0)
+    }
+}
+
+@keyframes in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.15
+    }
+}
+
+.hack--pattern {
+    opacity: 0;
+    right: -2700px;
+    // filter: blur(2px);
+    top: -900px;
+    transition: all 1400ms cubic-bezier(0.58, 0, 0.07, 1.01);
+    width: 3974.17px;
+    animation: in 2s 400ms forwards;
+    &.notBlurred {
+        pointer-events: none;
+        filter: blur(0px);
+    }
+    img {
+        max-width: auto;
+        animation: move 24s linear infinite;
+    }
+    &.active {
+        right: 800px;
+        top: -400px;
+    }
+}
+
+.spin {
+    // animation: spin 10s linear infinite;
+}
+
+.eq {
+    width: 2px;
+    height: 10px;
+    margin: 0 1px;
+    transform: scaleY(0.1);
+    transform-origin: 0 100%;
+    &.active {
+        @for $i from 1 through 4 {
+            &:nth-of-type(#{$i}) {
+                animation: eq 1s .2s * $i infinite;
+            }
+        }
+    }
+}
+
+@keyframes eq {
+    0% {
+        transform: scaleY(.2);
+    }
+    25% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(.4);
+    }
+    75% {
+        transform: scaleY(.7);
+    }
+    100% {
+        transform: scaleY(.2);
+    }
+}
+
+.introWrapper.active {
+    pointer-events: none !important;
+    div {
+        pointer-events: none !important;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.deckLimit {
+    color: #e82755;
+    font-size: 16px;
+    background: #e8275526;
+    padding: 10px 30px;
+    animation: flashit 2s infinite;
+    opacity: 1;
+}
+
+@keyframes flashit {
+    5% {
+        opacity: 0
+    }
+    10% {
+        opacity: 1
+    }
+    15% {
+        opacity: 0
+    }
+    20% {
+        opacity: 1
+    }
+    25% {
+        opacity: 0
+    }
+    30% {
+        opacity: 1
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.arrows {
+    img {
+        max-width: 30px;
+        opacity: 0.06;
+    }
+    &--three {
+        @for $i from 1 through 3 {
+            img:nth-of-type(#{4 - $i}) {
+                animation: arrow 1s (1 / 12) * $i + 0s infinite;
+            }
+        }
+    }
+    &--five {
+        @for $i from 1 through 35 {
+            img:nth-of-type(#{6 - $i}) {
+                animation: arrow 1s (1 / 12) * $i + 0s infinite;
+            }
+        }
+    }
+}
+
+// Intro stuff
+.game_shop__cards,
+.game_stageComplete {
+    .slot {
+        transition: all 200ms !important;
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+}
+
+.game_enumerate,
+.game_gameoverman,
+.game_winner {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #041b20f2;
+    transition: all 300ms;
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.game_gameoverman,
+.game_winner {
+    background: #041b20;
+    transition: all 1000ms 1000ms;
+    &.active {
+        transition: all 400ms;
+    }
+}
+
+.game_intro {
+    opacity: 0;
+    transition: opacity 1000ms;
+    background: #061b20;
+    pointer-events: none;
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+    h3 {
+        &.active {
+            animation: flash 500ms forwards;
+        }
+        @keyframes flash {
+            0% {
+                opacity: 1
+            }
+            20% {
+                opacity: 0
+            }
+            40% {
+                opacity: 1
+            }
+            60% {
+                opacity: 0
+            }
+            80% {
+                opacity: 1
+            }
+            100% {
+                opacity: 1
+            }
+        }
+    }
+}
+
+.game_intro__achievements {
+    transition: transform 600ms 0ms cubic-bezier(0.55, 0.01, 0.01, 0.97);
+    position: absolute;
+    transform: translateX(100%);
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #0F272D;
+    &.active {
+        transition: transform 600ms 250ms cubic-bezier(0.55, 0.01, 0.01, 0.97);
+        transform: translateX(0%);
+        & .inner {
+            opacity: 1;
+            transition: all 600ms 600ms;
+        }
+    }
+    .inner {
+        max-width: 1250px;
+        margin: auto;
+        padding: 30px;
+         ::-webkit-scrollbar {
+            width: 3px;
+        }
+         ::-webkit-scrollbar-track {
+            background: #0d2329;
+        }
+         ::-webkit-scrollbar-thumb {
+            background-color: #00fcc0;
+        }
+        .grid {
+            height: calc(100vh - 392px);
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.ach {
+    transition: all 100ms;
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.game_intro__newgame {
+    width: 0;
+    transition: all 600ms 600ms;
+    & .inner {
+        opacity: 0;
+        padding: 90px 0 90px 90px;
+        border-left: 2px solid #0e2328;
+        transition: width 600ms 0ms, opacity 600ms 0ms, margin 1ms 600ms;
+    }
+    &.active {
+        width: 500px;
+        transition: all 600ms 250ms;
+        & .inner {
+            margin-left: 90px;
+            opacity: 1;
+            transition: opacity 600ms 600ms, width 600ms 600ms;
+        }
+    }
+    input {
+        color: #00FFC2;
+        background: #0F272D;
+        padding: 8px 17px 8px 47px;
+        font-size: 20px;
+        outline: none;
+        margin-top: 4px;
+    }
+    button.random {
+        transition: all 200ms;
+        &:hover {
+            transform: rotate(180deg)
+        }
+    }
+    .net {
+        top: 16px;
+    }
+}
+
+button.hack {
+    color: #061b20;
+    padding: 6px 30px;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: all 200ms;
+    font-weight: 500;
+    clip-path: polygon(18% 0, 100% 0, 100% 67%, 84% 100%, 0 100%, 0 35%);
+    &:hover {
+        background: #00ffc2;
+    }
+}
+
+button.skip {
+    clip-path: polygon(14% 0, 100% 0, 100% 70%, 86% 100%, 0 100%, 0 33%);
+}
+
+.backArrow {
+    opacity: 0.2;
+    transition: all 200ms;
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.game_achievement {
+    background: #021114;
+    padding: 23px 40px 20px 40px;
+    h3 {
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #00FCC0;
+    }
+    &__name {
+        font-size: 22px;
+    }
+    &__description {
+        font-size: 16px;
+        color: #607a81;
+        line-height: 18px;
+    }
+}
+
+.selection {
+    transition: all 300ms;
+    padding: 30px 30px;
+    background: #05181c;
+    &:hover {
+        background: #00ffc2;
+        h4,
+        p {
+            color: #061b20;
+        }
+        svg path {
+            fill: #061b20;
+        }
+    }
+}
+
+.detected {
+    background: #00ffa308;
+    padding: 0px 60px;
+    margin: 30px 0;
+}
+
+.menu,
+.game_gameover,
+.game_gameoverman,
+.game_winner {
+    h3,
+    a {
+        cursor: pointer;
+        transition: all 150ms;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: 20px;
+        display: block;
+        &:hover {
+            background: #00FFC2;
+            color: #061b20;
+        }
+    }
+    a {
+        padding: 0;
+    }
+}
+
+.game_achievement {
+    transform: translateY(100%);
+    transition: all 300ms;
+    &.active {
+        transform: translateY(0%);
+    }
+}
+
+body {
+    font-size: 14px;
+    background: #061B20;
+    font-family: 'Rajdhani', sans-serif;
+    overflow: hidden;
+    image-rendering: pixelated;
+    user-select: none;
+    font-weight: 500;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        line-height: 100% !important;
+    }
+}
+
+.constrain {
+    min-width: 1250px;
+}
+
+.screenCap {
+    z-index: 10000000;
+    width: 100%;
+    height: 100%;
+    background: #061b20;
+    display: none;
+    @media screen and (max-width: 1300px) {
+        display: flex;
+    }
+    @media screen and (max-height: 700px) {
+        display: flex;
+    }
+}
+
+.game_stage__relics {
+    position: absolute;
+    z-index: 10000;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 50px 50px 50px 50px;
+    background: #051418;
+    transform: translateY(100%);
+    transition: transform 300ms, opacity 300ms 0s;
+    opacity: 0;
+    &.active {
+        transition: transform 300ms, opacity 300ms 1s;
+        opacity: 1
+    }
+    .relic {
+        background: #071b20;
+        padding: 20px 16px;
+        border-radius: 14px;
+        svg {
+            height: 18px;
+        }
+    }
+    &.min {
+        transform: translateY(0%);
+    }
+}
+
+.count {
+    background: #00ffc2;
+    height: 24px;
+    width: 38px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 25px;
+    display: inline-block;
+    color: #061b20;
+    border-radius: 100px;
+    position: absolute;
+    top: -31px;
+    right: -26px;
+}
+
+.game {
+    &_header {
+        z-index: 10000;
+        position: relative;
+        transition: all 600ms 600ms;
+        transform: translateY(-200px);
+        &.active {
+            transform: translateY(0px);
+        }
+        &>div {}
+    }
+    &_stage {
+        max-width: 1250px;
+        opacity: 0;
+        transition: opacity 1s 1s;
+        &.active {
+            opacity: 1;
+        }
+    }
+    .slot {
+        width: 135px;
+        height: 215px;
+        transition: transform 600ms, opacity 600ms, width 150ms 100ms, margin 150ms 100ms;
+        &.inactive {
+            transform: scale(0);
+            opacity: 0;
+            width: 0;
+            margin-right: -16px;
+            & .back {
+                backface-visibility: visible
+            }
+        }
+        &.unrevealed {
+            background: #2c2c2c;
+            color: white;
+        }
+    }
+    .cardholder {
+        transform: rotateY(0deg);
+        transition: transform 0.4s 300ms, right 50ms 50ms;
+        backface-visibility: hidden;
+        &--inactive {
+            transform: rotateY(180deg);
+        }
+    }
+    .card {
+        height: 215px;
+        width: 135px;
+        border-radius: 6px;
+        cursor: pointer;
+        background-size: cover;
+        color: white;
+        &.trash {
+            background-image: url(https://assets.codepen.io/217233/cardBackTrash.png);
+            pointer-events: none;
+        }
+        &.back {
+            background-image: url(https://assets.codepen.io/217233/hack--cardback.png);
+            transform: rotateY(0deg);
+            transition: transform 0.4s 300ms;
+            pointer-events: none;
+            backface-visibility: hidden;
+            &.inactive {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+    .damageNumber {
+        animation: damageNumber 350ms forwards;
+    }
+    @keyframes damageNumber {
+        from {
+            transform: translateY(-10px);
+        }
+        to {
+            transform: translateY(-50px);
+        }
+    }
+}
+
+.gsc_player__character,
+.cardholder {
+    transition: all 50ms;
+}
+
+// shop
+.relicCount {
+    background: #00ffc2;
+    height: 24px;
+    width: 24px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 25px;
+    display: inline-block;
+    color: #061b20;
+    border-radius: 100px;
+    position: relative;
+    top: -1px;
+    left: 2px;
+}
+
+.game_minimize,
+.relics_minimize {
+    width: 220px;
+    background: #051418;
+    padding: 20px 0;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: all 300ms;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    clip-path: polygon(0% 0, 100% 0, 100% 67%, 91% 100%, 0 100%, 0 35%);
+    &:hover {
+        color: rgba(0, 255, 194, 1);
+        //background: linear-gradient(0deg, rgba(0, 255, 194, 0.5) -250%, rgba(0, 255, 194, 0) 80%);
+    }
+}
+
+.relics_minimize {
+    bottom: auto;
+    top: -120px;
+    left: 0;
+    width: 160px;
+    right: auto;
+    margin: auto;
+    clip-path: polygon(90% 0, 100% 21%, 100% 100%, 0 100%, 0 0);
+}
+
+@keyframes pulseProgress {
+    from {
+        box-shadow: 0 0 0 0px rgba(0, 255, 194, 1)
+    }
+    to {
+        box-shadow: 0 0 0 5px rgba(0, 255, 194, 0)
+    }
+}
+
+.gsc_field {
+    min-width: 500px;
+}
+
+.progress {
+    margin-right: 1px;
+    &.active {
+        background: #00FFC2;
+        animation: pulseProgress 1s infinite;
+        svg path {
+            fill: #061b20;
+        }
+    }
+    &.inactive {
+        background: transparent;
+        border: 2px solid #053935;
+    }
+    &.complete {
+        background: #00ffc226;
+    }
+}
+
+.game_shop,
+.game_stageComplete {
+    background: #051418;
+    padding: 60px 0 60px 0;
+    transform: translateY(-120%);
+    transition: all 300ms;
+    z-index: 2000;
+    button.hack {
+        clip-path: polygon(8% 0, 100% 0, 100% 70%, 92% 100%, 0 100%, 0 33%);
+    }
+    &.active {
+        transform: translateY(0%);
+    }
+    &.min {
+        transform: translateY(calc(-100% + 107px));
+        button {
+            display: none;
+        }
+    }
+}
+
+.game_stageComplete {
+    padding: 60px 0 110px 0;
+}
+
+.gameInit {
+    opacity: 0;
+    pointer-events: none;
+    .flash {
+        z-index: 10000;
+        pointer-events: none;
+    }
+    .menu,
+    .author,
+    .flash {
+        opacity: 0;
+        transition: all 1000ms 2200ms;
+    }
+    .author {
+        transition: all 1000ms 2000ms;
+    }
+    .logo {
+        transform: scale(10);
+        transition: all 100ms 900ms;
+        img {
+            opacity: 0;
+            transition: all 200ms 900ms;
+        }
+    }
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+        .menu,
+        .author {
+            opacity: 1;
+        }
+        .flash {
+            animation: introflash 200ms 1000ms forwards
+        }
+        .logo {
+            transform: scale(1);
+            img {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@keyframes introflash {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.gamePreload {
+    opacity: 0;
+    transition: all 100ms;
+    pointer-events: none;
+    z-index: 10000000000;
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+    }
+}
